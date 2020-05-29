@@ -1,7 +1,7 @@
 # {{ cookiecutter.description }} - {{ cookiecutter.project_name }}
 
 * This template uses basic Flask [here](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
-* The requirements are located in `requirements.txt`
+* The requirements are located in `requirements.txt` and you can locally run `make requirements`. It will install the dev requirements as well.
 * Uses cookiecutter to generate the template project
 
 ## Requirements
