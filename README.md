@@ -17,8 +17,8 @@
 
 ## Development
 
-* The template offers a possibility to integrate with redis and postgres both locally and remote.
-    1. Remotely run `docker-compose up` and the service should trigger normally
+* The template offers a possibility to integrate with redis and postgres both locally and remotely, where remotely is up to the developer..
+    1. Locally run `docker-compose up` and the service should trigger normally
     2. Remotely, replace settings (`config/settings.py`) with the settings you need
 
 * If you wish to have other databases, just replace the variables by the ones necessary
