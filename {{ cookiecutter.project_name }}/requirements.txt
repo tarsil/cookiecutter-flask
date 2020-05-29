@@ -1,0 +1,7 @@
+flask_api==1.1
+flask-marshmallow==0.10.1
+Flask-RESTplus==0.13.0
+Flask-SQLAlchemy==2.4.3
+marshmallow-sqlalchemy==0.23.0
+redis==3.5.2
+postgres==3.0.0

@@ -1,0 +1,9 @@
+-r requirements.txt
+factory_boy
+sqlacodegen
+sphinx
+mock
+ipdb
+ipython
+webtest
+werkzeug==0.16.0
