@@ -6,9 +6,9 @@
 
 ## Requirements
 
-. Python 3.6 +
-. (Optional) Virtualenv (or pyenv, venv...)
-. Cookiecutter (to install the template)
+* Python 3.6 +
+* (Optional) Virtualenv (or pyenv, venv...)
+* Cookiecutter (to install the template)
 
 ## How to install
 
