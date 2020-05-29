@@ -31,7 +31,7 @@ class BaseView(ContextMixin, View):
     allowed_methods = ["get", "post", "head", "options", "delete", "put", "trace", "patch"]
 
     def __init__(self, *args, **kwargs):
-        super(BaseView, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.allowed_methods = [m.lower() for m in self.allowed_methods]
 
     def get_template_name(self):
