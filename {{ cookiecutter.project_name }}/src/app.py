@@ -1,3 +1,4 @@
+import flask_seasurf
 from flask import Flask
 from flask_marshmallow import Marshmallow
 
@@ -14,6 +15,7 @@ def configure_app(app: Flask) -> None:
     :return: None
     """
     app.config.from_envvar("FLASK_SETTINGS_FILENAME", silent=True)
+    app.csrf = flask_seasurf.SeaSurf(app)
 
     marshmallow = Marshmallow(app)
     marshmallow.init_app(app)
