@@ -18,6 +18,7 @@ It will install the dev requirements as well.
 - [How to install](#how-to-install)
 - [Development](#development)
 - [Run Locally](#run-locally)
+- [Configurations](#configurations)
 - [Run Tests](#run-tests)
 
 ---
@@ -73,6 +74,16 @@ where remotely is up to the developer.
     1. `make run-special FLASK_SETTINGS_FILENAME=_location_of_file/file.py`
 
 - You should be able to access `http://127.0.0.1:5001/` and test the endpoint.
+
+## Configurations
+
+The project comes with pre-set of configurations located at `src/config/`.
+
+ 1. `settings.py` is the main default settings config.
+
+Inside the config module contains the `development` and `testing` modules but those can
+be overwritten, removed or moved to a different location and easily called by the 
+`FLASK_SETTINGS_FILENAME` environment variable.
 
 ## Run tests
 
