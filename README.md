@@ -2,7 +2,6 @@
 
 [![CircleCI](https://circleci.com/gh/tarsil/cookiecutter-flask.svg?style=shield&circle-token=dc7b04e09667d387047c4b59faa604a22867189b)](https://circleci.com/gh/tarsil/cookiecutter-flask)
 
-- This template uses basic [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 - The requirements are located in `requirements.txt` and you can locally run `make requirements`. 
 It will install the dev requirements as well.
 - Uses cookiecutter to generate the template project
@@ -13,6 +12,8 @@ It will install the dev requirements as well.
 ## Table of Contents
 
 - [Requirements](#requirements)
+- [Optional Requirements](#optional-requirements)
+- [Dependencies](#dependencies)
 - [How to install](#how-to-install)
 - [Development](#development)
 - [Run Locally](#run-locally)
@@ -22,10 +23,28 @@ It will install the dev requirements as well.
 
 ## Requirements
 
-- Python 3.6 +
+- Python 3.8 or above
 - (Optional) Virtualenv (or pyenv, venv...)
 - Cookiecutter (to install the template)
-- Docker (optional and latest) and docker-compose (also optional and latest)
+
+## Optional Requirements
+
+- Docker (optional and latest) and docker-compose (also optional and latest) if you want to start
+a redis and postgres container and to `make run docker` working properly.
+
+## Dependencies
+
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
+- [Flask-Marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)
+- [Flask-RESTplus](https://flask-restplus.readthedocs.io/en/stable/)
+- [flask-seasurf](https://flask-seasurf.readthedocs.io/en/latest/)
+
+Also contains additional packages in case of using redis and postges by using
+
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
+- [Marshmallow-SQLalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Redis](https://redislabs.com/lp/python-redis/)
 
 ## How to install
 
