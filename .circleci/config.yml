@@ -22,7 +22,7 @@ jobs:
           name: Run the tests
           command: |
             cd my-flask-app
-            make run-tests
+            make run-nose
 
 workflows:
   main:
