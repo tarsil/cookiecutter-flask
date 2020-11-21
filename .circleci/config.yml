@@ -18,4 +18,9 @@ jobs:
           name: Run the tests
           command: |
             cd my-flask-app
-            make run-tests 
+            make run-tests
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
