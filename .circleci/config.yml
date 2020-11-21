@@ -7,16 +7,6 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-      - restore_cache:
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-      - save_cache:
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-          paths:
-            - ".venv"
-            - "/usr/local/bin"
-            - "/usr/local/lib/python3.6/site-packages"
       - run:
           command: |
             sudo pip install pipenv
@@ -37,11 +27,6 @@ jobs:
           command: |
             cd my-flask-app
             pipenv make run-tests
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
-          destination: tr1
 
 workflows:
   main:
