@@ -5,15 +5,15 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
       - run:
           command: pip install cookiecutter
           name: Install Cookiecutter
       - run:
           name: Create project test from cookiecutter
           command: cookiecutter . --no-input
+      -run:
+          name: Install requirements from cookiecutter
+          command: make requirements
       - run:
           name: Run the tests
           command: |
