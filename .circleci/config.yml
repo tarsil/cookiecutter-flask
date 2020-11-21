@@ -8,25 +8,21 @@ jobs:
     steps:
       - checkout
       - run:
-          command: |
-            sudo pip install pipenv
-            pipenv install
-      - run:
-          command: pipenv pip install cookiecutter
+          command: pip install cookiecutter
           name: Install Cookiecutter
       - run:
           name: Create project test from cookiecutter
-          command: pipenv cookiecutter . --no-input
+          command: cookiecutter . --no-input
       - run:
           name: Install requirements from cookiecutter
           command: |
             cd my-flask-app
-            pipenv make requirements
+            make requirements
       - run:
           name: Run the tests
           command: |
             cd my-flask-app
-            pipenv make run-tests
+            make run-tests
 
 workflows:
   main:
