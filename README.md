@@ -1,5 +1,7 @@
 # {{ cookiecutter.description }} - {{ cookiecutter.project_name }}
 
+[![CircleCI](https://circleci.com/gh/tarsil/cookiecutter-flask.svg?style=shield&circle-token=dc7b04e09667d387047c4b59faa604a22867189b)](https://circleci.com/gh/tarsil/cookiecutter-flask)
+
 - This template uses basic [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 - The requirements are located in `requirements.txt` and you can locally run `make requirements`. 
 It will install the dev requirements as well.
