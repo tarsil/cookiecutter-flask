@@ -24,9 +24,8 @@ It will install the dev requirements as well.
 
 ## Overview
 
-This is a simple boierplate that helps spining up flask microservices for your own use cases.
-This aims to hjelp you not spending a lot of hours making initial configurations for flask microservices.
-
+This is a simple boierplate that helps spinning up flask microservices for your own use cases.
+This aims to help you not spending a lot of hours making initial configurations for flask microservices.
 
 ## Requirements
 
