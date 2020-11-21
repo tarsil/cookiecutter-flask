@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Create project test from cookiecutter
           command: cookiecutter . --no-input
-      -run:
+      - run:
           name: Install requirements from cookiecutter
           command: make requirements
       - run:
