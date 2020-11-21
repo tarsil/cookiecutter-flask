@@ -8,3 +8,4 @@ ipython
 pre-commit
 webtest
 werkzeug==0.16.0
+-r requirements-test.txt

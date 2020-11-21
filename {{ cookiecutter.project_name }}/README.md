@@ -49,3 +49,4 @@ where remotely is up to the developer.
 ## Run tests
 
 - `make run-tests` - Runs all the standard tests
+- `make run-nose` - Runs all the tests inside the tests module and app

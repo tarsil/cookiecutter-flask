@@ -6,6 +6,7 @@
 - The requirements are located in `requirements.txt` and you can locally run `make requirements`. 
 It will install the dev requirements as well.
 - Uses cookiecutter to generate the template project
+- [Flask-Testing](https://pythonhosted.org/Flask-Testing/) is used for the tests with [nose](https://nose.readthedocs.io/en/latest/)
 
 ---
 
@@ -51,3 +52,4 @@ where remotely is up to the developer.
 ## Run tests
 
 - `make run-tests` - Runs all the standard tests
+- `make run-nose` - Runs all the tests inside the tests module and app

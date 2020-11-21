@@ -13,9 +13,9 @@ clean_pyc: ## Cleans all *.pyc in the system
 
 .PHONY: requirements
 requirements: ## Installs the dev requirements
-	pip install -r requirements-dev.txt
+	pip install -r requirements/requirements-dev.txt
 
-.PHONY: requirements
+.PHONY: docker
 docker: ## Styarts the docker compose
 	docker-compose up
 
@@ -37,4 +37,8 @@ run-special: ## Starts the server by passing a special settings file `FLASK_SETT
 
 .PHONY: run-tests
 run-tests: ## Runs the local tests
-	python -m src.tests
+	python -m src.tests.test_app
+
+.PHONY: run-nose
+run-nose: ## Runs the local tests with nose
+	FLASK_SETTINGS_FILENAME=configs/testing/settings.py nosetests --exe --with-specplugin
