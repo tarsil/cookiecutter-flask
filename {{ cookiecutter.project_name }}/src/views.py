@@ -3,7 +3,7 @@ ALl the views of {{ cookiecutter.project_name }}
 """
 from flask import make_response
 from flask_api import status
-from flask_restplus import Resource
+from flask_restx import Resource
 
 
 class HelloWorldApiView(Resource):

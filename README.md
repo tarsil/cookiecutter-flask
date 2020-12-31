@@ -43,7 +43,6 @@ a redis and postgres container and to `make run docker` working properly.
 
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 - [Flask-Marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)
-- [Flask-RESTplus](https://flask-restplus.readthedocs.io/en/stable/)
 - [flask-seasurf](https://flask-seasurf.readthedocs.io/en/latest/)
 
 Also contains additional packages in case of using redis and postges by using
