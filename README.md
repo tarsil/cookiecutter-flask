@@ -55,8 +55,8 @@ Also contains additional packages in case of using redis and postges by using
 
 ## How to install
 
- 1. Install cookiecutter. Instructions [here](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
- 2. Run `cookiecutter https://github.com/tiagoarasilva/cookiecutter-flask` and follow the instructions
+ 1. [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+ 2. Run `cookiecutter https://github.com/tarsil/cookiecutter-flask` and follow the instructions
  3. `make requirements` - Installs all the requirements needed.
 
 ## Development
