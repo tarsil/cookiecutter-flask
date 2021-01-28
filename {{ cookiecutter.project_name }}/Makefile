@@ -35,10 +35,10 @@ run-local: ## Starts the local server
 run-special: ## Starts the server by passing a special settings file `FLASK_SETTINGS_FILENAME`
 	FLASK_SETTINGS_FILENAME=$(FLASK_SETTINGS_FILENAME) python -m src.serve
 
-.PHONY: run-tests
-run-tests: ## Runs the local tests
-	python -m src.tests.test_app
+.PHONY: test
+test: ## Runs the local tests
+	pytest
 
-.PHONY: run-nose
-run-nose: ## Runs the local tests with nose
-	FLASK_SETTINGS_FILENAME=configs/testing/settings.py nosetests --exe --with-specplugin
+.PHONY: mypy
+mypy: ## Runs the typing analyser
+	mypy src/
