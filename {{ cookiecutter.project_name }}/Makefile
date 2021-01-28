@@ -42,3 +42,7 @@ test: ## Runs the local tests
 .PHONY: mypy
 mypy: ## Runs the typing analyser
 	mypy src/
+
+ifndef VERBOSE
+.SILENT:
+endif

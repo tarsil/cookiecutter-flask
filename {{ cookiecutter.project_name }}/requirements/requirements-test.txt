@@ -1,3 +1,4 @@
 Flask-Testing
 pytest
 pytest-pspec
+mypy
