@@ -79,5 +79,4 @@ be overwritten, removed or moved to a different location and easily called by th
 
 ## Run tests
 
-- `make run-tests` - Runs all the standard tests
-- `make run-nose` - Runs all the tests inside the tests module and app
+- `make test` - Runs all the tests
