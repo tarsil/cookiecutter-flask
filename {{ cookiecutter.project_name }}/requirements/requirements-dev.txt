@@ -7,5 +7,5 @@ ipdb
 ipython
 pre-commit
 webtest
-werkzeug==0.6.0
+werkzeug==0.16.0
 -r requirements-test.txt
