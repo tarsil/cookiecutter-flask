@@ -18,11 +18,11 @@ jobs:
           command: |
             cd my-flask-app
             make requirements
-      - run:
-          name: Run the typing analyser
-          command: |
-            cd my-flask-app
-            make mypy
+#       - run:
+#           name: Run the typing analyser
+#           command: |
+#             cd my-flask-app
+#             make mypy
       - run:
           name: Run the tests
           command: |
