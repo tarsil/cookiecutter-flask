@@ -1,5 +1,6 @@
 from flask_restx import Api
-from .views import HelloWorldApiView
+from flask import current_app
+from src.api.v1 import routes as v1
 
 
 def routes(app):
@@ -9,10 +10,11 @@ def routes(app):
     Args:
         app: Flask current app
     """
-    api = Api(app=app, version="1.0", title="Service API",
-              description="All the APIs of {{ cookiecutter.project_name }}")
+    api = Api(version="1.0")
 
-    namespace = api.namespace("{{ cookiecutter.project_name }}")
+    with app.app_context():
+        add_specs = current_app.config.get('SWAGGER_SPECS', False)
+        api.init_app(app, title="Service API", description="All the APIs of {{ cookiecutter.project_name }}", add_specs=add_specs)
 
     # APPLYING THE ROUTES
-    namespace.add_resource(HelloWorldApiView, '/api/v1/hello/', endpoint='hello-world')
+    v1.routes(api)
