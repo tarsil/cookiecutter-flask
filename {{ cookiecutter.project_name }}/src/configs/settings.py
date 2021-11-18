@@ -40,3 +40,5 @@ CSRF_COOKIE_TIMEOUT = datetime.timedelta(days=1)
 
 # SWAGGER
 SWAGGER_SPECS = False
+
+CORS_ORIGINS =  ast.literal_eval(os.getenv('CORS_ORIGINS', '[]'))
