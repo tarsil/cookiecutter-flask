@@ -1,5 +1,6 @@
 import flask_seasurf
 from flask import Flask
+from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 
 
@@ -19,6 +20,9 @@ def configure_app(app: Flask) -> None:
 
     marshmallow = Marshmallow(app)
     marshmallow.init_app(app)
+
+    # CORS
+    CORS(app)
 
     from .routes import routes
     routes(app)

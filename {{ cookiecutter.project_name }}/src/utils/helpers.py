@@ -1,4 +1,4 @@
-# Copyright (c) 2019 Tiago Silva <https://github.com/tarsil>
+# Copyright (c) 2021 Tiago Silva <https://github.com/tarsil>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,10 +19,15 @@
 # THE SOFTWARE.
 
 import datetime
-import pytz
-import json
-from collections import namedtuple
 import functools
+import json
+import threading
+from collections import namedtuple
+
+import pytz
+
+_apps_lock = threading.RLock()
+_apps = {}
 
 __author__ = "Tiago A. Silva <tiago.arasilva@gmail.com>"
 __version__ = "1.0.1"
@@ -147,3 +152,56 @@ def remove_prefix(text, prefix):
     if text.startswith(prefix):
         return text[len(prefix):]
     return text
+
+
+def set_app(app):
+    """Sets an App instance by a given name.
+
+    Example:
+        ```
+        from flask_apscheduler import APScheduler
+
+        try:
+            get_app(APScheduler.__name__)
+        except ValueError:
+            scheduler = APScheduler()
+            scheduler.init_app(app)
+            set_app(scheduler)
+        ```
+
+    Args:
+        app: App module added to the application context.
+    
+    Returns:
+        App: The app instance with the given name
+    """
+    with _apps_lock:
+        if app.__class__.__name__ not in _apps:
+            _apps[app.__class__.__name__] = app
+            return app
+
+
+def get_app(name: str):
+    """Retrieves an App instance by name.
+
+    Args:
+      name: Name of the App instance to retrieve (optional).
+
+    Returns:
+      App: An App instance with the given name.
+
+    Raises:
+      ValueError: If the specified name is not a string, or if the specified
+          app does not exist.
+    """
+    if not isinstance(name, str):
+        raise ValueError('Illegal app name argument type: "{}". App name '
+                         'must be a string.'.format(type(name)))
+    with _apps_lock:
+        if name in _apps:
+            return _apps[name]
+
+    raise ValueError(
+        ('The app named "{name}" does not exist. Make sure to initialize '
+         'the app by calling init_app() or App(app) with your app name as the '
+         'argument.').format(name=name))

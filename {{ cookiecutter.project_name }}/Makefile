@@ -27,17 +27,21 @@ docker-no-logs: ##  Starts the docker compose without stdout logs
 docker-stop: ## Stops the docker containers
 	docker-compose stop
 
-.PHONY: run-local
-run-local: ## Starts the local server
-	python -m src.serve
+.PHONY: run-live
+run-live: ## Starts the local server with production settings
+	FLASK_ENV=live python -m src.serve
 
 .PHONY: run-special
 run-special: ## Starts the server by passing a special settings file `FLASK_SETTINGS_FILENAME`
 	FLASK_SETTINGS_FILENAME=$(FLASK_SETTINGS_FILENAME) python -m src.serve
 
+.PHONY: run-dev
+run-dev: ## Starts the local server with development settings
+	FLASK_SETTINGS_FILENAME=configs/development/settings.py python -m src.serve
+
 .PHONY: test
 test: ## Runs the local tests
-	pytest
+	pytest -s
 
 .PHONY: mypy
 mypy: ## Runs the typing analyser

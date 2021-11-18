@@ -10,12 +10,8 @@ import binascii
 # GENERAL SETTINGS
 
 DEBUG = False
-FLASK_ENV = os.getenv('FLASK_ENV', 'development')
+FLASK_ENV = os.getenv('FLASK_ENV', 'production')
 SECRET_KEY = os.getenv('SECRET_KEY', binascii.hexlify(os.urandom(24)))
-
-if FLASK_ENV in ('dev', 'development'):
-    DEBUG = True
-    AUTO_RELOADER = True
 
 # DATABASE CONFIGURATION
 
@@ -40,3 +36,5 @@ CSRF_COOKIE_TIMEOUT = datetime.timedelta(days=1)
 
 # SWAGGER
 SWAGGER_SPECS = False
+
+CORS_ORIGINS =  ast.literal_eval(os.getenv('CORS_ORIGINS', '[]'))
