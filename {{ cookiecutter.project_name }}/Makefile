@@ -41,7 +41,7 @@ run-dev: ## Starts the local server with development settings
 
 .PHONY: test
 test: ## Runs the local tests
-	pytest -s
+	FLASK_SETTINGS_FILENAME=configs/testing/settings.py pytest -s
 
 .PHONY: mypy
 mypy: ## Runs the typing analyser

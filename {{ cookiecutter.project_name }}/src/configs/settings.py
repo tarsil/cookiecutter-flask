@@ -4,6 +4,7 @@ trough environment variable `FLASK_APP_SETTINGS` that should be just a location
 of the file
 """
 import os
+import ast
 import datetime
 import binascii
 
@@ -12,6 +13,10 @@ import binascii
 DEBUG = False
 FLASK_ENV = os.getenv('FLASK_ENV', 'production')
 SECRET_KEY = os.getenv('SECRET_KEY', binascii.hexlify(os.urandom(24)))
+
+# LOGGING
+LOG_BACKTRACE = True
+LOG_LEVEL = 'INFO'
 
 # DATABASE CONFIGURATION
 

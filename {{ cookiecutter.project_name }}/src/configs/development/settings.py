@@ -7,6 +7,10 @@ AUTO_RELOADER = True
 SWAGGER_SPECS = True
 COVALENTHQ_API = []
 
+# LOGGING
+LOG_BACKTRACE = True
+LOG_LEVEL = 'DEBUG'
+
 try:
     from src.configs.development.local_settings import *
 except ImportError:
