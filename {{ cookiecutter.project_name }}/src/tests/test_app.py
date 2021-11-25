@@ -5,7 +5,7 @@ from src.app import create_app
 from flask_testing import TestCase
 
 
-class MyTestCase(TestCase):
+class TestAPI(TestCase):
 
     def create_app(self):
         app = create_app()
@@ -21,7 +21,3 @@ class MyTestCase(TestCase):
         client = self.client.get('/api/v1/{{ cookiecutter.project_name }}/hello')
 
         self.assertEqual(client.status_code, 200)
-
-
-if __name__ == '__main__':
-    unittest.main()
