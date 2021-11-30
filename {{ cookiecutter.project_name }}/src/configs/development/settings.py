@@ -4,6 +4,8 @@ DEBUG = True
 FLASK_ENV = 'development'
 AUTO_RELOADER = True
 
+ALLOWED_HOSTS = ['localhost']
+
 SWAGGER_SPECS = True
 COVALENTHQ_API = []
 

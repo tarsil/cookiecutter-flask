@@ -14,6 +14,11 @@ DEBUG = False
 FLASK_ENV = os.getenv('FLASK_ENV', 'production')
 SECRET_KEY = os.getenv('SECRET_KEY', binascii.hexlify(os.urandom(24)))
 
+# HOSTS AND SECURITY
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['*'])
+USE_X_FORWARDED_HOST = False
+USE_X_FORWARDED_PORT = False
+
 # LOGGING
 LOG_BACKTRACE = True
 LOG_LEVEL = 'INFO'
