@@ -4,6 +4,8 @@ import flask_seasurf
 from flask import Flask
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
+from flask_seasurf import SeaSurf
+from flask_talisman import Talisman
 from loguru import logger
 
 from .utils.handlers import InterceptHandler
@@ -32,10 +34,15 @@ def configure_app(app: Flask) -> None:
     marshmallow.init_app(app)
 
     # LOGGER
-    # LOGGER
     logger.add(sys.stdout, level=app.config['LOG_LEVEL'], format="{time} {level} {message}", colorize=True,
                  backtrace=app.config['LOG_BACKTRACE'])
     app.logger.addHandler(InterceptHandler())
+
+    # TALISMAN
+    Talisman(app)
+
+    # SEASURF
+    SeaSurf(app)
 
 
     from .routes import routes

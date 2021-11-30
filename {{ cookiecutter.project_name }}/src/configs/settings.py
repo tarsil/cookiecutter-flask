@@ -15,7 +15,7 @@ FLASK_ENV = os.getenv('FLASK_ENV', 'production')
 SECRET_KEY = os.getenv('SECRET_KEY', binascii.hexlify(os.urandom(24)))
 
 # HOSTS AND SECURITY
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', ['*'])
+ALLOWED_HOSTS = ast.literal_eval(os.getenv('ALLOWED_HOSTS', ['*']))
 USE_X_FORWARDED_HOST = False
 USE_X_FORWARDED_PORT = False
 
