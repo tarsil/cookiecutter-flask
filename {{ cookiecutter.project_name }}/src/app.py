@@ -1,4 +1,6 @@
+import os
 import sys
+from pathlib import Path
 
 import flask_seasurf
 from flask import Flask
@@ -49,6 +51,19 @@ def configure_app(app: Flask) -> None:
     routes(app)
 
 
+def _build_path():
+    """
+    Builds the path of the project and project root.
+
+    Exports the folders on the `apps` directory.
+    """
+    SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+    os.path.basename(os.path.dirname(SITE_ROOT))
+
+    Path(__file__).resolve().parent.parent
+    sys.path.append(os.path.join(SITE_ROOT, "apps"))
+
+
 def create_app():
     """
     Main entry-point of the service.
@@ -58,6 +73,7 @@ def create_app():
     2. Initializes the dependencies and add them to the application context
     3. Checks if there is more than one thread
     """
+    _build_path()
     app = Flask(__name__)
 
     try:

@@ -1,5 +1,5 @@
 from flask_restx import Api
-from .views import HelloWorldApiView
+from ...apps.{{ cookiecutter.app_name }}.v1.routes import routes as {{ cookiecutter.app_name }}_v1
 
 
 def routes(api: Api):
@@ -9,7 +9,4 @@ def routes(api: Api):
     Args:
         app: Flask current app
     """
-    namespace = api.namespace("api/v1/{{ cookiecutter.project_name }}")
-
-    # APPLYING THE ROUTES
-    namespace.add_resource(HelloWorldApiView, '/hello', endpoint='hello-world')
+    {{ cookiecutter.app_name }}_v1(api)
