@@ -1,9 +1,9 @@
 # {{ cookiecutter.description }} - {{ cookiecutter.project_name }}
 
-[![CircleCI](https://circleci.com/gh/tarsil/cookiecutter-flask.svg?style=shield&circle-token=dc7b04e09667d387047c4b59faa604a22867189b)](https://circleci.com/gh/tarsil/cookiecutter-flask)
+![CI](https://github.com/tarsil/cookiecutter-flask/actions/workflows/main.yml/badge.svg)
 
-- The requirements are located in `requirements.txt` and you can locally run `make requirements`. 
-It will install the dev requirements as well.
+- The requirements are located in `requirements.txt` and you can locally run `make requirements`.
+  It will install the dev requirements as well.
 - Uses cookiecutter to generate the template project
 - [Flask-Testing](https://pythonhosted.org/Flask-Testing/) is used for the tests with [nose](https://nose.readthedocs.io/en/latest/)
 
@@ -37,7 +37,7 @@ This aims to help you not spending a lot of hours making initial configurations 
 ## Optional Requirements
 
 - Docker (optional and latest) and docker-compose (also optional and latest) if you want to start
-a redis and postgres container and to `make run docker` working properly.
+  a redis and postgres container and to `make run docker` working properly.
 
 ## Dependencies
 
@@ -54,23 +54,22 @@ Also contains additional packages in case of using redis and postges by using
 
 ## How to install
 
- 1. [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
- 2. Run `cookiecutter https://github.com/tarsil/cookiecutter-flask` and follow the instructions
- 3. `make requirements` - Installs all the requirements needed.
+1.  [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+2.  Run `cookiecutter https://github.com/tarsil/cookiecutter-flask` and follow the instructions
+3.  `make requirements` - Installs all the requirements needed.
 
 ## Development
 
-- The template offers a possibility to integrate with redis and postgres both locally and remotely, 
-where remotely is up to the developer.
-    1. Locally run `docker-compose up` and the service should trigger normally
-    2. Remotely, replace settings (`config/settings.py`) with the settings you need
+- The template offers a possibility to integrate with redis and postgres both locally and remotely,
+  where remotely is up to the developer. 1. Locally run `docker-compose up` and the service should trigger normally 2. Remotely, replace settings (`config/settings.py`) with the settings you need
 
 - If you wish to have other databases, just replace the variables by the ones necessary
 
 ## Run locally
 
 - make run-local` or if you wish to run with a different set of settings:
-    1. `make run-special FLASK_SETTINGS_FILENAME=_location_of_file/file.py`
+
+  1. `make run-special FLASK_SETTINGS_FILENAME=_location_of_file/file.py`
 
 - You should be able to access `http://127.0.0.1:5001/` and test the endpoint.
 
@@ -78,10 +77,10 @@ where remotely is up to the developer.
 
 The project comes with pre-set of configurations located at `src/config/`.
 
- 1. `settings.py` is the main default settings config.
+1.  `settings.py` is the main default settings config.
 
 Inside the config module contains the `development` and `testing` modules but those can
-be overwritten, removed or moved to a different location and easily called by the 
+be overwritten, removed or moved to a different location and easily called by the
 `FLASK_SETTINGS_FILENAME` environment variable.
 
 ## Run tests
